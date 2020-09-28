@@ -1,7 +1,7 @@
 import Base.show
 
 """Type abstrait dont d'autres types d'arretes non orientees dériveront."""
-abstract type AbstractEdge{Node} end
+abstract type AbstractEdge{T} end
 
 """Type représentant les arcs non-oriente d'un graphe.
 
@@ -11,9 +11,9 @@ Exemple:
         edge = Edge(Node2, Node1)
 
 """
-mutable struct Edge{Node} <: AbstractEdge{Node}
-  data::Node[]
-  weight:: Int
+mutable struct Edge{T} <: AbstractEdge{T}
+  data::T
+  weight::Int
 end
 
 # on présume que tous les noeuds dérivant d'AbstractNode
